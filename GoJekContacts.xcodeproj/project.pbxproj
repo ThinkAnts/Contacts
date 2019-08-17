@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18F82731230825AE008491E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F82730230825AE008491E6 /* AppDelegate.swift */; };
-		18F82733230825AE008491E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F82732230825AE008491E6 /* ViewController.swift */; };
 		18F82736230825AE008491E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F82734230825AE008491E6 /* Main.storyboard */; };
 		18F82739230825AE008491E6 /* GoJekContacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F82737230825AE008491E6 /* GoJekContacts.xcdatamodeld */; };
 		18F8273B230825B0008491E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8273A230825B0008491E6 /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		18F8272D230825AE008491E6 /* GoJekContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJekContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F82730230825AE008491E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18F82732230825AE008491E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18F82735230825AE008491E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18F82738230825AE008491E6 /* GoJekContacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoJekContacts.xcdatamodel; sourceTree = "<group>"; };
 		18F8273A230825B0008491E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			children = (
 				18F827612308283F008491E6 /* View */,
 				18F82730230825AE008491E6 /* AppDelegate.swift */,
-				18F82732230825AE008491E6 /* ViewController.swift */,
 				18F82734230825AE008491E6 /* Main.storyboard */,
 				18F8273A230825B0008491E6 /* Assets.xcassets */,
 				18F8273C230825B0008491E6 /* LaunchScreen.storyboard */,
@@ -190,6 +187,7 @@
 				18F82729230825AE008491E6 /* Sources */,
 				18F8272A230825AE008491E6 /* Frameworks */,
 				18F8272B230825AE008491E6 /* Resources */,
+				18F8276423084203008491E6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -309,6 +307,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		18F8276423084203008491E6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"  \n";
+		};
 		3B0E3523349F3CC03AEDEDC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,7 +397,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F82733230825AE008491E6 /* ViewController.swift in Sources */,
 				18F82739230825AE008491E6 /* GoJekContacts.xcdatamodeld in Sources */,
 				18F8276323082857008491E6 /* ContactsTableViewController.swift in Sources */,
 				18F82731230825AE008491E6 /* AppDelegate.swift in Sources */,
