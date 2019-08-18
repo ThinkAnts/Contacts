@@ -1,5 +1,5 @@
 //
-//  ContactDetailTableViewCell.swift
+//  ContactHeaderTableViewCell.swift
 //  GoJekContacts
 //
 //  Created by Ravi on 17/08/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactDetailTableViewCell: UITableViewCell {
+class ContactHeaderTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

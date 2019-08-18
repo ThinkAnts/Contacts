@@ -17,8 +17,8 @@ class ContactDetailViewController: UIViewController {
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: nil)
-        detailsTableView.register(UINib.init(nibName: "ContactDetailTableViewCell", bundle: Bundle.main),
-                                forCellReuseIdentifier: "contactDetail")
+        detailsTableView.register(UINib.init(nibName: "ContactHeaderTableViewCell", bundle: Bundle.main),
+                                forCellReuseIdentifier: "contactHeader")
     }
 }
 
@@ -29,12 +29,20 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
     }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 280.0
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "contactHeader") as?
+                                    ContactHeaderTableViewCell ?? ContactHeaderTableViewCell()
+        return headerCell
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactDetail", for: indexPath)
-        return cell
+        return UITableViewCell()
     }
-
 }
