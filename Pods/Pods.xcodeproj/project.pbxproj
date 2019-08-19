@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16DD6BDB6E9AC2A03BBFE39A7B5216D0 /* Pods_GoJekContactsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GoJekContactsUITests.framework; path = "Pods-GoJekContactsUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16DD6BDB6E9AC2A03BBFE39A7B5216D0 /* Pods_GoJekContactsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoJekContactsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1981D6CD6E62FDE3D839723B8AADFDCF /* Pods-GoJekContactsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoJekContactsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2133370AE1B7F64395D66B3C0950B4B9 /* Pods-GoJekContacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoJekContacts.release.xcconfig"; sourceTree = "<group>"; };
 		27BBFFFF6FFE5B2FE84547F1F39C4F8D /* Pods-GoJekContacts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoJekContacts.modulemap"; sourceTree = "<group>"; };
@@ -47,15 +47,15 @@
 		53BBFBB7355431599D043BACFCF7003E /* Pods-GoJekContactsUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GoJekContactsUITests-dummy.m"; sourceTree = "<group>"; };
 		54EF20E6786D9FDCE2E31ED97AC65615 /* Pods-GoJekContacts-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoJekContacts-resources.sh"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5B69B954AEDC4711CCB3258C9C1CFA93 /* Pods_GoJekContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GoJekContacts.framework; path = "Pods-GoJekContacts.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E9A15AAC1B6E7EFD32FB6D5F4646BCF /* Pods_GoJekContactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GoJekContactsTests.framework; path = "Pods-GoJekContactsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B69B954AEDC4711CCB3258C9C1CFA93 /* Pods_GoJekContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoJekContacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9A15AAC1B6E7EFD32FB6D5F4646BCF /* Pods_GoJekContactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoJekContactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7025A61E2A187846462F7FC71F17168C /* Pods-GoJekContacts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoJekContacts-umbrella.h"; sourceTree = "<group>"; };
 		82E8BDEC727662886B6A384345922E3A /* Pods-GoJekContactsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoJekContactsTests-resources.sh"; sourceTree = "<group>"; };
 		84F09937470B304AA7CEE0EEE2AF0587 /* Pods-GoJekContactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoJekContactsTests.release.xcconfig"; sourceTree = "<group>"; };
 		8566B8FBC716FB37181EEF1153F2DC9C /* Pods-GoJekContactsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GoJekContactsTests.modulemap"; sourceTree = "<group>"; };
 		8B469D6DBF8DBD34762ADAFDBF9B2199 /* Pods-GoJekContactsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoJekContactsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		90FE41AF08782314FC27A5D119708349 /* Pods-GoJekContactsUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoJekContactsUITests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A858DADE8D8E450CAE839FF4A6FB92BF /* Pods-GoJekContacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoJekContacts.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0D126AA835B1B259030CDE27C04CFE /* Pods-GoJekContactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoJekContactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AED1CD594F156415208AB5E6BD2FBB07 /* Pods-GoJekContactsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GoJekContactsTests-umbrella.h"; sourceTree = "<group>"; };
@@ -105,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -311,14 +310,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1030;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 4DFA86FAAC3479F36A496B2C15B7DBAC /* Products */;
@@ -417,11 +417,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoJekContactsUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoJekContactsUITests/Pods-GoJekContactsUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -456,11 +452,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoJekContactsTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoJekContactsTests/Pods-GoJekContactsTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -480,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -553,11 +546,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoJekContactsUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoJekContactsUITests/Pods-GoJekContactsUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -577,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -655,11 +645,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoJekContactsTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoJekContactsTests/Pods-GoJekContactsTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -694,11 +680,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoJekContacts/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoJekContacts/Pods-GoJekContacts.modulemap";
 				OTHER_LDFLAGS = "";
@@ -733,11 +715,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-GoJekContacts/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GoJekContacts/Pods-GoJekContacts.modulemap";
 				OTHER_LDFLAGS = "";

@@ -1,0 +1,39 @@
+//
+//  Networking.swift
+//  GoJekContacts
+//
+//  Created by Ravi on 19/08/19.
+//  Copyright © 2019 ThinkAnts. All rights reserved.
+//
+
+import Foundation
+
+struct Networking {
+
+    func performNetworkTask<T: Codable>(endpoint: GojekContactAPI,
+                                        type: T.Type,
+                                        completion: ((_ response: [T]) -> Void)?) {
+        let urlString = endpoint.baseURL.appendingPathComponent(endpoint.path).absoluteString.removingPercentEncoding
+        let session = URLSession.shared
+
+        guard let urlRequest = URL(string: urlString ?? "") else { return }
+        let request = URLRequest(url: urlRequest)
+//        request.httpMethod = "GET"
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let urlSession = session.dataTask(with: request) { (data, _, error) in
+            if error != nil {
+                return
+            }
+            guard let data = data else {
+                return
+            }
+            let response = Response(data: data)
+            guard let decoded = response.decode(type) else {
+                return
+            }
+            completion?(decoded)
+        }
+        urlSession.resume()
+    }
+}

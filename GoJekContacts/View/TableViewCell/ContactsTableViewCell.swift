@@ -10,8 +10,19 @@ import UIKit
 
 class ContactsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    public static let reuseIdentifier = "contactsCell"
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profilePicImageView: UIImageView!
+    @IBOutlet weak var favouriteImageView: UIImageView!
+
+    public var viewModel: ContactsTableViewCellModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            nameLabel.text = viewModel.firstName + viewModel.lastName
+            if viewModel.isFavourite == true {
+                favouriteImageView.image = UIImage(named: "Homefavourite")
+            }
+        }
     }
 }

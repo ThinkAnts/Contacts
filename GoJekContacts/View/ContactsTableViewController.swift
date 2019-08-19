@@ -10,22 +10,23 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
-    let collation = UILocalizedIndexedCollation.current()
-    var sections: [[AnyObject]] = []
-    var objects: [AnyObject] = [] {
-        didSet {
-            let selector = #selector(getter: UIApplicationShortcutItem.localizedTitle)
-            sections = Array(repeating: [], count: collation.sectionTitles.count)
-
-            let sortedObjects = collation.sortedArray(from: objects, collationStringSelector: selector)
-            for object in sortedObjects {
-                let sectionNumber = collation.section(for: object, collationStringSelector: selector)
-                sections[sectionNumber].append(object as AnyObject)
-            }
-
-            self.tableView.reloadData()
-        }
-    }
+    private let viewModel = ContactsTableViewModel()
+//    let collation = UILocalizedIndexedCollation.current()
+//    var sections: [[AnyObject]] = []
+//    var objects: [AnyObject] = [] {
+//        didSet {
+//            let selector = #selector(getter: UIApplicationShortcutItem.localizedTitle)
+//            sections = Array(repeating: [], count: collation.sectionTitles.count)
+//
+//            let sortedObjects = collation.sortedArray(from: objects, collationStringSelector: selector)
+//            for object in sortedObjects {
+//                let sectionNumber = collation.section(for: object, collationStringSelector: selector)
+//                sections[sectionNumber].append(object as AnyObject)
+//            }
+//
+//            //self.tableView.reloadData()
+//        }
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,15 @@ class ContactsTableViewController: UITableViewController {
                                                                  action: nil)
         self.tableView.register(UINib.init(nibName: "ContactsTableViewCell", bundle: Bundle.main),
                                 forCellReuseIdentifier: "contactsCell")
+        getAllContacts()
+    }
+
+    func getAllContacts() {
+        viewModel.getAllContacts(contacts: "contacts") { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 
 }
@@ -47,29 +57,39 @@ class ContactsTableViewController: UITableViewController {
 extension ContactsTableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return collation.sectionTitles.count
+        return viewModel.sectionTitles.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.sectionTitles.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.reuseIdentifier,
+                                                       for: indexPath)
+                                                       as? ContactsTableViewCell else {
+                                                                    return UITableViewCell()
+                                                        }
+        let cellViewModel = viewModel.cellViewModel(index: indexPath.row)
+        cell.viewModel = cellViewModel
+
         return cell
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return collation.sectionTitles[section]
+        return viewModel.sectionTitles[section]
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return collation.sectionIndexTitles
+        return viewModel.sectionTitles
     }
 
     override func tableView(_ tableView: UITableView,
                             sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return collation.section(forSectionIndexTitle: index)
+        guard let index = viewModel.contactSection.firstIndex(of: title) else {
+            return -1
+        }
+        return index
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
