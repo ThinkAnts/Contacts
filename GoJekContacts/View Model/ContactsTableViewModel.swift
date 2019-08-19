@@ -27,6 +27,14 @@ class ContactsTableViewModel {
         return contacts.count
     }
 
+    public func numberRowsCount(index: Int) -> Int {
+        let key = contactSection[index]
+        if let contactValue = contactDictionary[key] {
+            return contactValue.count
+        }
+        return 0
+    }
+
     public func cellViewModel(index: Int) -> ContactsTableViewCellModel? {
         let key = contactSection[index]
         let con: [Contact] = contactDictionary[key]!
