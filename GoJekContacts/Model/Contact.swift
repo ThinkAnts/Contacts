@@ -24,14 +24,4 @@ struct Contact: Codable {
         case isFavourite = "favorite"
         case urlPath = "url"
     }
-
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        firstName = try container.decode(String.self, forKey: .firstName)
-//        lastName = try container.decode(String.self, forKey: .lastName)
-//        profilePic = try container.decode(String.self, forKey: .profilePic)
-//        urlPath = try container.decode(String.self, forKey: .urlPath)
-//        contactId = try container.decode(Int.self, forKey: .contactId)
-//        isFavourite = try container.decode(Bool.self, forKey: .isFavourite)
-//    }
 }

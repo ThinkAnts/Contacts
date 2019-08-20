@@ -70,9 +70,9 @@ extension ContactsTableViewController {
                                                        as? ContactsTableViewCell else {
                                                                     return UITableViewCell()
                                                         }
-        let cellViewModel = viewModel.cellViewModel(index: indexPath.row)
+        
+        let cellViewModel = viewModel.cellViewModel(index: indexPath.section, row: indexPath.row)
         cell.viewModel = cellViewModel
-
         return cell
     }
 
@@ -86,7 +86,7 @@ extension ContactsTableViewController {
 
     override func tableView(_ tableView: UITableView,
                             sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        guard let index = viewModel.contactSection.firstIndex(of: title) else {
+        guard let index = viewModel.sectionTitles.firstIndex(of: title) else {
             return -1
         }
         return index

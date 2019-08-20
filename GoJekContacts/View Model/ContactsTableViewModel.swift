@@ -11,14 +11,15 @@ import Foundation
 class ContactsTableViewModel {
     private let networking = Networking()
     private var contacts = [Contact]()
-    var contactSection = [String]()
-    var contactDictionary = [String: [Contact]]()
+    private var contactSection = [String]()
+    private var contactDictionary = [String: [Contact]]()
 
     public func getAllContacts(contacts: String,
                                completion: (() -> Void)?) {
         networking.performNetworkTask(endpoint: GojekContactAPI.allContacts(contacts: contacts),
                                       type: Contact.self) { [weak self] (response) in
                                         self?.contacts = response
+                                        self?.displayInAlphabeticalOrder()
                                         completion?()
         }
     }
@@ -35,26 +36,29 @@ class ContactsTableViewModel {
         return 0
     }
 
-    public func cellViewModel(index: Int) -> ContactsTableViewCellModel? {
+    public func cellViewModel(index: Int, row: Int) -> ContactsTableViewCellModel? {
         let key = contactSection[index]
         let con: [Contact] = contactDictionary[key]!
-        let contactTableViewCellModel = ContactsTableViewCellModel(contact: con[0])
+        let contactTableViewCellModel = ContactsTableViewCellModel(contact: con[row])
         return contactTableViewCellModel
     }
 
     public var sectionTitles: [String] {
+        return contactSection
+    }
+
+    private func displayInAlphabeticalOrder() {
         for contact in contacts {
             let firstName: String = contact.firstName
-            let key = Array(firstName)[0]
-            let upperCased = key.uppercased()
-            if var contactValue = contactDictionary[upperCased] {
+            let key = (Array(firstName)[0]).uppercased()
+            if var contactValue = contactDictionary[key] {
                 contactValue.append(contact)
+                contactDictionary[key] = contactValue
             } else {
-                contactDictionary[upperCased] = [contact]
+                contactDictionary[key] = [contact]
             }
         }
         contactSection = [String](contactDictionary.keys)
         contactSection = contactSection.sorted()
-        return contactSection
     }
 }
