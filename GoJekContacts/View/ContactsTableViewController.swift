@@ -11,22 +11,7 @@ import UIKit
 class ContactsTableViewController: UITableViewController {
 
     private let viewModel = ContactsTableViewModel()
-//    let collation = UILocalizedIndexedCollation.current()
-//    var sections: [[AnyObject]] = []
-//    var objects: [AnyObject] = [] {
-//        didSet {
-//            let selector = #selector(getter: UIApplicationShortcutItem.localizedTitle)
-//            sections = Array(repeating: [], count: collation.sectionTitles.count)
-//
-//            let sortedObjects = collation.sortedArray(from: objects, collationStringSelector: selector)
-//            for object in sortedObjects {
-//                let sectionNumber = collation.section(for: object, collationStringSelector: selector)
-//                sections[sectionNumber].append(object as AnyObject)
-//            }
-//
-//            //self.tableView.reloadData()
-//        }
-//    }
+    var activityIndicatorView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +24,18 @@ class ContactsTableViewController: UITableViewController {
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: nil)
-        self.tableView.register(UINib.init(nibName: "ContactsTableViewCell", bundle: Bundle.main),
-                                forCellReuseIdentifier: "contactsCell")
+//        self.tableView.register(UINib.init(nibName: "ContactsTableViewCell", bundle: Bundle.main),
+//                                forCellReuseIdentifier: "contactsCell")
+        activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        self.tableView.backgroundView = activityIndicatorView
         getAllContacts()
     }
 
     func getAllContacts() {
+        activityIndicatorView.startAnimating()
         viewModel.getAllContacts(contacts: "contacts") { [weak self] in
             DispatchQueue.main.async {
+                self?.activityIndicatorView.stopAnimating()
                 self?.tableView.reloadData()
             }
         }
@@ -70,7 +59,6 @@ extension ContactsTableViewController {
                                                        as? ContactsTableViewCell else {
                                                                     return UITableViewCell()
                                                         }
-        
         let cellViewModel = viewModel.cellViewModel(index: indexPath.section, row: indexPath.row)
         cell.viewModel = cellViewModel
         return cell
@@ -92,10 +80,17 @@ extension ContactsTableViewController {
         return index
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let contactDetailViewController = storyBoard.instantiateViewController(withIdentifier: "ContactDetail") as?
-                                            ContactDetailViewController ?? ContactDetailViewController()
-        self.navigationController?.pushViewController(contactDetailViewController, animated: true)
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let contactDetailViewController = storyBoard.instantiateViewController(withIdentifier: "ContactDetail") as?
+//                                            ContactDetailViewController ?? ContactDetailViewController()
+//        self.navigationController?.pushViewController(contactDetailViewController, animated: true)
+//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destionationViewController = segue.destination as? ContactDetailViewController,
+            let selectionIndexPath = tableView.indexPathForSelectedRow {
+            let detailViewModel = viewModel.cellViewModel(index: selectionIndexPath.section, row: selectionIndexPath.row)
+            destionationViewController.detailViewModel = detailViewModel
+        }
     }
 }
