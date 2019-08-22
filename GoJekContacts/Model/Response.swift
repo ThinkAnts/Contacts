@@ -16,12 +16,13 @@ struct Response {
 }
 
 extension Response {
-    public func decode<T: Codable>(_ type: T.Type) -> [T]? {
+    public func decode<T: Codable>(_ type: T.Type) -> T? {
         let jsonDecoder = JSONDecoder()
         do {
-            let response = try jsonDecoder.decode([T].self, from: data)
+            let response = try jsonDecoder.decode(T.self, from: data)
             return response
         } catch _ {
+            print("Couldn't able to parse the data")
             return nil
         }
     }

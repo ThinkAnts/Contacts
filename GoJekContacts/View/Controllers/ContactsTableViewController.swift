@@ -81,10 +81,8 @@ extension ContactsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destionationViewController = segue.destination as? ContactDetailViewController,
             let selectionIndexPath = tableView.indexPathForSelectedRow {
-            let detailViewModel = viewModel.cellViewModel(index: selectionIndexPath.section,
-                                                          row: selectionIndexPath.row)
-
-           destionationViewController.viewModel = detailViewModel
+            let cellViewModel = viewModel.cellViewModel(index: selectionIndexPath.section, row: selectionIndexPath.row)
+            destionationViewController.selectedContactId = cellViewModel?.contactId ?? 0
         }
     }
 }

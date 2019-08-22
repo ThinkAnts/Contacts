@@ -12,7 +12,7 @@ struct Networking {
 
     func performNetworkTask<T: Codable>(endpoint: GojekContactAPI,
                                         type: T.Type,
-                                        completion: ((_ response: [T]) -> Void)?) {
+                                        completion: ((_ response: T) -> Void)?) {
         let urlString = endpoint.baseURL.appendingPathComponent(endpoint.path).absoluteString.removingPercentEncoding
         let session = URLSession.shared
 

@@ -25,3 +25,7 @@ struct Contact: Codable {
         case urlPath = "url"
     }
 }
+
+struct Contacts: Codable {
+    var contacts: [Contact]?
+}

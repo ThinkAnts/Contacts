@@ -10,21 +10,21 @@ import UIKit
 
 class ContactDetailViewController: UIViewController {
     @IBOutlet var detailsTableView: UITableView!
-    private var detailViewModel: ContactsTableViewCellModel?
-    private let detailModel: ContactDetailViewModel? = nil
-    var isEditingMode = false
+    private var detailModel = ContactDetailViewModel()
+    private var isEditingMode = false
+    private var contactId = ""
     var contactArray = ["First Name", "Last Name", "mobile", "email"]
 
-    public var viewModel: ContactsTableViewCellModel? {
+    public var selectedContactId: Int = 0 {
         didSet {
-            guard let viewModel = viewModel else { return }
-            //detailModel = ContactDetailViewModel(mode: viewModel as? Contact)
+               contactId = String(selectedContactId)
             }
         }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        getSelectedContactDetails()
     }
 
     func setup() {
@@ -49,6 +49,7 @@ class ContactDetailViewController: UIViewController {
             navigationBarItemSetup(title: "Edit", action: #selector(editButtonTapped))
             self.navigationItem.leftBarButtonItem = nil
             isEditingMode = false
+            detailModel.editingMode(boolValue: false)
         } else {
             navigationBarItemSetup(title: "Done", action: #selector(editButtonTapped(sender:)))
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel",
@@ -56,6 +57,7 @@ class ContactDetailViewController: UIViewController {
                                                                     target: self,
                                                                     action: #selector(cancelButtonTapped))
             isEditingMode = true
+            detailModel.editingMode(boolValue: true)
         }
         detailsTableView.reloadData()
     }
@@ -68,6 +70,14 @@ class ContactDetailViewController: UIViewController {
         editingMode(value: isEditingMode)
     }
 
+    // API Call
+    func getSelectedContactDetails() {
+        detailModel.getContactDetails(contactId: contactId) { [weak self] in
+            DispatchQueue.main.async {
+                self?.detailsTableView.reloadData()
+            }
+        }
+    }
 }
 
 extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegate {

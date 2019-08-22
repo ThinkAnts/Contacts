@@ -17,8 +17,8 @@ class ContactsTableViewModel {
     public func getAllContacts(contacts: String,
                                completion: (() -> Void)?) {
         networking.performNetworkTask(endpoint: GojekContactAPI.allContacts(contacts: contacts),
-                                      type: Contact.self) { [weak self] (response) in
-                                        self?.contacts = response
+                                      type: Contacts.self) { [weak self] (response) in
+                                        //self?.contacts = response
                                         self?.displayInAlphabeticalOrder()
                                         completion?()
         }
