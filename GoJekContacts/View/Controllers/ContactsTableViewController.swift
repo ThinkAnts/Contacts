@@ -12,7 +12,6 @@ class ContactsTableViewController: UITableViewController {
 
     private let viewModel = ContactsTableViewModel()
     var activityIndicatorView: UIActivityIndicatorView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Contact"
@@ -24,8 +23,7 @@ class ContactsTableViewController: UITableViewController {
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: nil)
-//        self.tableView.register(UINib.init(nibName: "ContactsTableViewCell", bundle: Bundle.main),
-//                                forCellReuseIdentifier: "contactsCell")
+
         activityIndicatorView = UIActivityIndicatorView(style: .gray)
         self.tableView.backgroundView = activityIndicatorView
         getAllContacts()
@@ -80,17 +78,13 @@ extension ContactsTableViewController {
         return index
     }
 
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let contactDetailViewController = storyBoard.instantiateViewController(withIdentifier: "ContactDetail") as?
-//                                            ContactDetailViewController ?? ContactDetailViewController()
-//        self.navigationController?.pushViewController(contactDetailViewController, animated: true)
-//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destionationViewController = segue.destination as? ContactDetailViewController,
             let selectionIndexPath = tableView.indexPathForSelectedRow {
-            let detailViewModel = viewModel.cellViewModel(index: selectionIndexPath.section, row: selectionIndexPath.row)
-            destionationViewController.detailViewModel = detailViewModel
+            let detailViewModel = viewModel.cellViewModel(index: selectionIndexPath.section,
+                                                          row: selectionIndexPath.row)
+
+           destionationViewController.viewModel = detailViewModel
         }
     }
 }

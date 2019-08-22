@@ -10,9 +10,17 @@ import UIKit
 
 class ContactDetailViewController: UIViewController {
     @IBOutlet var detailsTableView: UITableView!
-    var detailViewModel: ContactsTableViewCellModel?
+    private var detailViewModel: ContactsTableViewCellModel?
+    private let detailModel: ContactDetailViewModel? = nil
     var isEditingMode = false
     var contactArray = ["First Name", "Last Name", "mobile", "email"]
+
+    public var viewModel: ContactsTableViewCellModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            //detailModel = ContactDetailViewModel(mode: viewModel as? Contact)
+            }
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +35,6 @@ class ContactDetailViewController: UIViewController {
                                   forCellReuseIdentifier: "contactDetail")
 
         detailsTableView.tableFooterView = UIView()
-        print(detailViewModel)
     }
 
     func navigationBarItemSetup(title: String, action: Selector) {

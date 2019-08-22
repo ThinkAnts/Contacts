@@ -9,4 +9,11 @@
 import Foundation
 
 class ContactDetailViewModel {
+    private let networking = Networking()
+    private var contact: Contact?
+    
+    init(mode: ContactDetailViewModel) {
+        contact = mode.contact
+    }
 }
+

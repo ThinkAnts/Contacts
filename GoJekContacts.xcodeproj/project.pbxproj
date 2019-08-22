@@ -220,11 +220,19 @@
 		18F827612308283F008491E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71132D56230E6EDA0015C00A /* Controllers */,
 				180EF06C2308528300993A38 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71132D56230E6EDA0015C00A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				18F8276223082857008491E6 /* ContactsTableViewController.swift */,
 				180EF0712308627A00993A38 /* ContactDetailViewController.swift */,
 			);
-			path = View;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8D11EED859B79B888119B691 /* Frameworks */ = {
