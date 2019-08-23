@@ -87,11 +87,7 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
     }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isEditingMode == true {
-            return contactArray.count
-        }
-        return contactArray.count - 2
-
+        return detailModel.count
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -99,6 +95,15 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
             return 205.0
         }
         return 280.0
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if isEditingMode == false {
+            if indexPath.row == 0 || indexPath.row == 1 {
+                return 0
+            }
+        }
+        return 56.0
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -111,11 +116,12 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactDetail") as?
             ContactDetailTableViewCell ?? ContactDetailTableViewCell()
-        if isEditingMode == true {
-            cell.infoLabel.text = contactArray[indexPath.row]
-        } else {
-            cell.infoLabel.text = contactArray[indexPath.row + 2]
+        if isEditingMode == false {
+            if indexPath.row == 0 || indexPath.row == 1 {
+                cell.isHidden = true
+            }
         }
+        cell.value = detailModel.cellValue(row: indexPath.row)
         return cell
     }
 }

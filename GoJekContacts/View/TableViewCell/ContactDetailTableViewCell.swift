@@ -11,8 +11,9 @@ import UIKit
 class ContactDetailTableViewCell: UITableViewCell {
      @IBOutlet var infoLabel: UILabel!
      @IBOutlet var detailLabel: UITextField!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    public var value: String = "" {
+        didSet {
+            detailLabel.text = value
+        }
     }
 }

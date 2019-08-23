@@ -16,10 +16,14 @@ class ContactHeaderTableViewCell: UITableViewCell {
     @IBOutlet var heightConstarint: NSLayoutConstraint!
     var gradientLayer: CAGradientLayer!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        //createGradientLayer()
+    public var viewModel: ContactDetailTableViewCellModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            nameLabel.text = viewModel.firstName + viewModel.lastName
+            if viewModel.isFavourite == true {
+                favouriteButton.imageView?.image = UIImage(named: "Homefavourite")
+            }
+        }
     }
 
     func setup(value: Bool) {

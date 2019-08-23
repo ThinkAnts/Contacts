@@ -29,6 +29,8 @@
 		18F82749230825B0008491E6 /* GoJekContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F82748230825B0008491E6 /* GoJekContactsTests.swift */; };
 		18F82754230825B0008491E6 /* GoJekContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F82753230825B0008491E6 /* GoJekContactsUITests.swift */; };
 		18F8276323082857008491E6 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8276223082857008491E6 /* ContactsTableViewController.swift */; };
+		71132D5A230FCF290015C00A /* ContactDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71132D59230FCF290015C00A /* ContactDetails.swift */; };
+		71132D5C230FE8F00015C00A /* ContactDetailTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71132D5B230FE8F00015C00A /* ContactDetailTableViewCellModel.swift */; };
 		A67480EFF26FC8FF24404098 /* Pods_GoJekContactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C687780568EAD351F81A696E /* Pods_GoJekContactsUITests.framework */; };
 		D33A3785E892BA7BF144E1BF /* Pods_GoJekContactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D899865508FDCDCC3F5EB2 /* Pods_GoJekContactsTests.framework */; };
 		FA169D2852E720DA74C70853 /* Pods_GoJekContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3468F3628DA166732C29FAB /* Pods_GoJekContacts.framework */; };
@@ -82,6 +84,8 @@
 		18F8276223082857008491E6 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		2B69BE144D84A7C83049E230 /* Pods-GoJekContacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoJekContacts.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoJekContacts/Pods-GoJekContacts.release.xcconfig"; sourceTree = "<group>"; };
 		58C69D1817750DD299C2B8D9 /* Pods-GoJekContactsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoJekContactsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoJekContactsUITests/Pods-GoJekContactsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		71132D59230FCF290015C00A /* ContactDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetails.swift; sourceTree = "<group>"; };
+		71132D5B230FE8F00015C00A /* ContactDetailTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailTableViewCellModel.swift; sourceTree = "<group>"; };
 		7429F2D82F0EAEB1A0E01958 /* Pods-GoJekContacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoJekContacts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoJekContacts/Pods-GoJekContacts.debug.xcconfig"; sourceTree = "<group>"; };
 		7B8FD31AE94ACC9E0C70292E /* Pods-GoJekContactsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoJekContactsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoJekContactsUITests/Pods-GoJekContactsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C687780568EAD351F81A696E /* Pods_GoJekContactsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoJekContactsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,7 @@
 				180EF086230A7B3C00993A38 /* ContactsTableViewModel.swift */,
 				180EF08C230A81E400993A38 /* ContactsTableViewCellModel.swift */,
 				1818C6ED230DA6E700E54527 /* ContactDetailViewModel.swift */,
+				71132D5B230FE8F00015C00A /* ContactDetailTableViewCellModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			children = (
 				180EF084230A7A2000993A38 /* Response.swift */,
 				180EF08A230A7BD600993A38 /* Contact.swift */,
+				71132D59230FCF290015C00A /* ContactDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,10 +488,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				180EF07523086CC600993A38 /* ContactHeaderableViewCell.swift in Sources */,
+				71132D5A230FCF290015C00A /* ContactDetails.swift in Sources */,
 				180EF080230A77C000993A38 /* Endpoint.swift in Sources */,
 				180EF079230950DB00993A38 /* ContactDetailTableViewCell.swift in Sources */,
 				180EF06F230852B400993A38 /* ContactsTableViewCell.swift in Sources */,
 				180EF07E230A77A400993A38 /* Networking.swift in Sources */,
+				71132D5C230FE8F00015C00A /* ContactDetailTableViewCellModel.swift in Sources */,
 				180EF08D230A81E400993A38 /* ContactsTableViewCellModel.swift in Sources */,
 				180EF0722308627A00993A38 /* ContactDetailViewController.swift in Sources */,
 				180EF08B230A7BD600993A38 /* Contact.swift in Sources */,
