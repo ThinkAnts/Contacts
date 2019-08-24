@@ -26,7 +26,11 @@ class ContactsTableViewController: UITableViewController {
 
         activityIndicatorView = UIActivityIndicatorView(style: .gray)
         self.tableView.backgroundView = activityIndicatorView
-        getAllContacts()
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+         getAllContacts()
     }
 
     func getAllContacts() {

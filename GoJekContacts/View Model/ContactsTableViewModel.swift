@@ -17,7 +17,7 @@ class ContactsTableViewModel {
     public func getAllContacts(contacts: String,
                                completion: (() -> Void)?) {
         networking.performNetworkTask(endpoint: GojekContactAPI.allContacts(contacts: contacts),
-                                      type: Contact.self) { [weak self] (response) in
+                                      type: Contact.self, method: "GET", params: nil) { [weak self] (response) in
                                         self?.contacts = response
                                         self?.displayInAlphabeticalOrder()
                                         completion?()
@@ -49,7 +49,7 @@ class ContactsTableViewModel {
 
     private func displayInAlphabeticalOrder() {
         for contact in contacts {
-            let firstName: String = contact.firstName
+            let firstName: String = contact.firstName ?? ""
             let key = (Array(firstName)[0]).uppercased()
             if var contactValue = contactDictionary[key] {
                 contactValue.append(contact)

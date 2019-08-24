@@ -11,15 +11,18 @@ import Foundation
 struct Networking {
 
     func performNetworkTask<T: Codable>(endpoint: GojekContactAPI,
-                                        type: T.Type,
+                                        type: T.Type, method: String, params: Data?,
                                         completion: ((_ response: [T]) -> Void)?) {
         let urlString = endpoint.baseURL.appendingPathComponent(endpoint.path).absoluteString.removingPercentEncoding
         let session = URLSession.shared
 
         guard let urlRequest = URL(string: urlString ?? "") else { return }
-        let request = URLRequest(url: urlRequest)
-//        request.httpMethod = "GET"
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        var request = URLRequest(url: urlRequest)
+        request.httpMethod = method
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if method == "PUT" {
+            request.httpBody = params
+        }
 
         let urlSession = session.dataTask(with: request) { (data, _, error) in
             if error != nil {

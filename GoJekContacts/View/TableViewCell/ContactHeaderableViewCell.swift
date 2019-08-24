@@ -21,7 +21,8 @@ class ContactHeaderTableViewCell: UITableViewCell {
             guard let viewModel = viewModel else { return }
             nameLabel.text = viewModel.firstName + viewModel.lastName
             if viewModel.isFavourite == true {
-                favouriteButton.imageView?.image = UIImage(named: "Homefavourite")
+                favouriteButton.setImage(UIImage(named: "Homefavourite"), for: .normal)
+                favouriteButton.imageView?.contentMode = .scaleAspectFill
             }
         }
     }

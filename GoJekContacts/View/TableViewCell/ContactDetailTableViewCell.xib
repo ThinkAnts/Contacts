@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfk-ad-Pu2">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfk-ad-Pu2">
                         <rect key="frame" x="24" y="20" width="74" height="15.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15.5" id="jaD-eg-rL7"/>
@@ -49,7 +49,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="detailLabel" destination="ML4-jQ-jwo" id="p6N-BK-7ZK"/>
+                <outlet property="detailField" destination="ML4-jQ-jwo" id="1Wv-ht-jaY"/>
                 <outlet property="infoLabel" destination="lfk-ad-Pu2" id="4b5-9F-duZ"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>

@@ -17,38 +17,38 @@ class ContactDetailTableViewCellModel {
     }
 
     var firstName: String {
-        return contactDetail.firstName
+        return contactDetail.firstName ?? ""
     }
 
     var lastName: String {
-        return contactDetail.lastName
+        return contactDetail.lastName ?? ""
     }
 
     var contactId: Int {
-        return contactDetail.contactId
+        return contactDetail.contactId ?? 0
     }
 
     var profilePic: String {
-        return contactDetail.profilePic
+        return contactDetail.profilePic ?? ""
     }
 
     var isFavourite: Bool {
-        return contactDetail.isFavourite
+        return contactDetail.isFavourite ?? false
     }
 
     var email: String {
-        return contactDetail.email
+        return contactDetail.email ?? ""
     }
 
     var phoneNumber: String {
-        return contactDetail.phoneNumber
+        return contactDetail.phoneNumber ?? ""
     }
 
     var updatedAt: String {
-        return contactDetail.updatedAt
+        return contactDetail.updatedAt ?? ""
     }
 
     var createdAt: String {
-        return contactDetail.createdAt
+        return contactDetail.createdAt ?? ""
     }
 }

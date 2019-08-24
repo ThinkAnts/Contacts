@@ -64,6 +64,9 @@ class ContactDetailViewController: UIViewController {
 
     @objc func editButtonTapped(sender: UIBarButtonItem) {
         editingMode(value: isEditingMode)
+        if isEditingMode == false {
+            updateContactDetails()
+        }
     }
 
     @objc func cancelButtonTapped(sender: UIBarButtonItem) {
@@ -73,6 +76,14 @@ class ContactDetailViewController: UIViewController {
     // API Call
     func getSelectedContactDetails() {
         detailModel.getContactDetails(contactId: contactId) { [weak self] in
+            DispatchQueue.main.async {
+                self?.detailsTableView.reloadData()
+            }
+        }
+    }
+
+    func updateContactDetails() {
+        detailModel.updateContactDetails(contactId: contactId) { [weak self] in
             DispatchQueue.main.async {
                 self?.detailsTableView.reloadData()
             }
@@ -110,6 +121,8 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "contactHeader") as?
                                     ContactHeaderTableViewCell ?? ContactHeaderTableViewCell()
         headerCell.setup(value: isEditingMode)
+        let cellModel = detailModel.cellViewModel()
+        headerCell.viewModel = cellModel
         return headerCell
     }
 
@@ -119,9 +132,18 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
         if isEditingMode == false {
             if indexPath.row == 0 || indexPath.row == 1 {
                 cell.isHidden = true
+                cell.detailField.isEnabled = false
             }
+        } else {
+            cell.detailField.tag = indexPath.row
+            cell.detailField.isEnabled = true
         }
-        cell.value = detailModel.cellValue(row: indexPath.row)
+        cell.contactDic = detailModel.cellValue(row: indexPath.row)
+        let cellModel = detailModel.cellViewModel()
+        cell.viewModel = cellModel
+        cell.updatedContact = { [weak self] (contactDetail) in
+            self?.detailModel.updateContact(details: contactDetail)
+        }
         return cell
     }
 }

@@ -21,6 +21,7 @@
 		180EF08B230A7BD600993A38 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EF08A230A7BD600993A38 /* Contact.swift */; };
 		180EF08D230A81E400993A38 /* ContactsTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EF08C230A81E400993A38 /* ContactsTableViewCellModel.swift */; };
 		1818C6EE230DA6E700E54527 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C6ED230DA6E700E54527 /* ContactDetailViewModel.swift */; };
+		18A84D842311243F00C31833 /* Codability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A84D832311243F00C31833 /* Codability.swift */; };
 		18F82731230825AE008491E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F82730230825AE008491E6 /* AppDelegate.swift */; };
 		18F82736230825AE008491E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F82734230825AE008491E6 /* Main.storyboard */; };
 		18F82739230825AE008491E6 /* GoJekContacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F82737230825AE008491E6 /* GoJekContacts.xcdatamodeld */; };
@@ -68,6 +69,7 @@
 		180EF08A230A7BD600993A38 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		180EF08C230A81E400993A38 /* ContactsTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCellModel.swift; sourceTree = "<group>"; };
 		1818C6ED230DA6E700E54527 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
+		18A84D832311243F00C31833 /* Codability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codability.swift; sourceTree = "<group>"; };
 		18F8272D230825AE008491E6 /* GoJekContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJekContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F82730230825AE008491E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F82735230825AE008491E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18A84D822311242000C31833 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18A84D832311243F00C31833 /* Codability.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		18F82724230825AE008491E6 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		18F8272F230825AE008491E6 /* GoJekContacts */ = {
 			isa = PBXGroup;
 			children = (
+				18A84D822311242000C31833 /* Helpers */,
 				180EF083230A7A0F00993A38 /* Model */,
 				180EF07C230A774600993A38 /* Networking */,
 				180EF07B230A73AA00993A38 /* View Model */,
@@ -504,6 +515,7 @@
 				180EF087230A7B3C00993A38 /* ContactsTableViewModel.swift in Sources */,
 				1818C6EE230DA6E700E54527 /* ContactDetailViewModel.swift in Sources */,
 				18F82731230825AE008491E6 /* AppDelegate.swift in Sources */,
+				18A84D842311243F00C31833 /* Codability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

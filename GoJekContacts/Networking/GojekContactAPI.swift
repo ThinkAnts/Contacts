@@ -11,6 +11,7 @@ import Foundation
 enum GojekContactAPI {
     case allContacts(contacts: String)
     case getContacts(contactId: String)
+    case updateContact(contactId: String)
 }
 
 extension GojekContactAPI: Endpoint {
@@ -23,6 +24,8 @@ extension GojekContactAPI: Endpoint {
         case .allContacts(let contacts):
             return "/\(contacts).json"
         case .getContacts(let contactId):
+            return "/contacts/\(contactId).json"
+        case .updateContact(let contactId):
             return "/contacts/\(contactId).json"
         }
     }

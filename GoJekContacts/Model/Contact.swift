@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Contact: Codable {
-    let contactId: Int
-    let firstName: String
-    let lastName: String
-    let profilePic: String
-    let isFavourite: Bool
-    let urlPath: String
+struct Contact: Codability {
+    let contactId: Int?
+    let firstName: String?
+    let lastName: String?
+    let profilePic: String?
+    let isFavourite: Bool?
+    let urlPath: String?
 
     private enum CodingKeys: String, CodingKey {
         case contactId = "id"

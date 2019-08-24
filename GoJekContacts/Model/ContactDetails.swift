@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct ContactDetails: Codable {
-    let contactId: Int
-    let firstName: String
-    let lastName: String
-    let email: String
-    let phoneNumber: String
-    let profilePic: String
-    let isFavourite: Bool
-    let createdAt: String
-    let updatedAt: String
+struct ContactDetails: Codability {
+    var contactId: Int?
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var phoneNumber: String?
+    var profilePic: String?
+    var isFavourite: Bool?
+    var createdAt: String?
+    var updatedAt: String?
 
     private enum CodingKeys: String, CodingKey {
         case contactId = "id"
@@ -29,5 +29,17 @@ struct ContactDetails: Codable {
         case isFavourite = "favorite"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+    }
+
+    init() {
+        self.contactId = 0
+        self.firstName = ""
+        self.lastName = ""
+        self.createdAt = ""
+        self.email = ""
+        self.phoneNumber = ""
+        self.isFavourite = false
+        self.updatedAt = ""
+        self.profilePic = ""
     }
 }

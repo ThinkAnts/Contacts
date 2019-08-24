@@ -17,22 +17,22 @@ class ContactsTableViewCellModel {
     }
 
     var firstName: String {
-        return contact.firstName
+        return contact.firstName ?? ""
     }
 
     var lastName: String {
-        return contact.lastName
+        return contact.lastName ?? ""
     }
 
     var contactId: Int {
-        return contact.contactId
+        return contact.contactId ?? 0
     }
 
     var profilePic: String {
-        return contact.profilePic
+        return contact.profilePic ?? ""
     }
 
     var isFavourite: Bool {
-        return contact.isFavourite
+        return contact.isFavourite ?? false
     }
 }

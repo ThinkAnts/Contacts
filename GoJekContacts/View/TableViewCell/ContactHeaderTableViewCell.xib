@@ -162,13 +162,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUU-Zb-PY5">
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUU-Zb-PY5">
                                                         <rect key="frame" x="7.5" y="4" width="47.5" height="44"/>
-                                                        <state key="normal" image="Favourite"/>
+                                                        <state key="normal" image="Homefavourite"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="Wwc-7G-qCH" firstAttribute="top" secondItem="nUU-Zb-PY5" secondAttribute="bottom" constant="1" id="3eM-wd-emq"/>
                                                     <constraint firstItem="nUU-Zb-PY5" firstAttribute="leading" secondItem="5QK-rb-9mh" secondAttribute="leading" constant="7.5" id="4fZ-8U-Rd2"/>
                                                     <constraint firstItem="Wwc-7G-qCH" firstAttribute="centerX" secondItem="5QK-rb-9mh" secondAttribute="centerX" id="BkI-YL-A5P"/>
                                                     <constraint firstItem="nUU-Zb-PY5" firstAttribute="centerX" secondItem="5QK-rb-9mh" secondAttribute="centerX" id="Ogw-Ll-IOB"/>
@@ -221,7 +222,7 @@
         <image name="Call" width="45" height="44"/>
         <image name="Camera" width="41" height="41"/>
         <image name="Email" width="45" height="44"/>
-        <image name="Favourite" width="44" height="44"/>
+        <image name="Homefavourite" width="19" height="18"/>
         <image name="Message" width="44" height="44"/>
         <image name="Placeholder" width="126" height="126"/>
     </resources>
