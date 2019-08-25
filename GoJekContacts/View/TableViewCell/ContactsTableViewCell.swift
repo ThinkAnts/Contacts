@@ -22,6 +22,8 @@ class ContactsTableViewCell: UITableViewCell {
             nameLabel.text = viewModel.firstName + viewModel.lastName
             if viewModel.isFavourite == true {
                 favouriteImageView.image = UIImage(named: "Homefavourite")
+            } else {
+                favouriteImageView.image = UIImage(named: "Favourite")
             }
         }
     }

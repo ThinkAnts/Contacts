@@ -20,7 +20,7 @@ struct Networking {
         var request = URLRequest(url: urlRequest)
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        if method == "PUT" {
+        if method == "PUT" || method == "POST" {
             request.httpBody = params
         }
 

@@ -123,6 +123,9 @@ extension ContactDetailViewController: UITableViewDataSource, UITableViewDelegat
         headerCell.setup(value: isEditingMode)
         let cellModel = detailModel.cellViewModel()
         headerCell.viewModel = cellModel
+        headerCell.updateFavourite = { [weak self] (favourite) in
+            self?.detailModel.updateFavourite(favourite: favourite)
+        }
         return headerCell
     }
 

@@ -22,7 +22,7 @@ class ContactsTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "Add"),
                                                                  style: .plain,
                                                                  target: self,
-                                                                 action: nil)
+                                                                 action: #selector(addContactTapped))
 
         activityIndicatorView = UIActivityIndicatorView(style: .gray)
         self.tableView.backgroundView = activityIndicatorView
@@ -41,6 +41,13 @@ class ContactsTableViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
         }
+    }
+
+    @objc func addContactTapped(sender: UIBarButtonItem) {
+        guard let addContactVC = self.storyboard?.instantiateViewController(withIdentifier: "AddContactSB")
+                                 else { return }
+        let navController = UINavigationController(rootViewController: addContactVC)
+        self.navigationController?.present(navController, animated: true, completion: nil)
     }
 
 }

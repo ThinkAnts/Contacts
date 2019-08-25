@@ -15,15 +15,13 @@ class ContactHeaderTableViewCell: UITableViewCell {
     @IBOutlet var secondView: UIView!
     @IBOutlet var heightConstarint: NSLayoutConstraint!
     var gradientLayer: CAGradientLayer!
+    var updateFavourite: ((_ isFavourite: Bool) -> Void)?
 
     public var viewModel: ContactDetailTableViewCellModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             nameLabel.text = viewModel.firstName + viewModel.lastName
-            if viewModel.isFavourite == true {
-                favouriteButton.setImage(UIImage(named: "Homefavourite"), for: .normal)
-                favouriteButton.imageView?.contentMode = .scaleAspectFill
-            }
+            setFavourite(bool: viewModel.isFavourite)
         }
     }
 
@@ -41,12 +39,18 @@ class ContactHeaderTableViewCell: UITableViewCell {
         }
     }
 
-//    func createGradientLayer() {
-//        gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = self.contentView.frame
-//        let color = UIColor(hex: "FFFFFF")
-//        let color1 = UIColor(hex: "50E3C2")
-//        gradientLayer.colors = [color?.cgColor, color1?.cgColor]
-//        self.contentView.layer.insertSublayer(gradientLayer, at: 0)
-//    }
+    func setFavourite(bool: Bool) {
+        if bool == true {
+            favouriteButton.setImage(UIImage(named: "Homefavourite"), for: .normal)
+        } else {
+            favouriteButton.setImage(UIImage(named: "Favourite"), for: .normal)
+        }
+    }
+
+    @IBAction func favoutiteClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        setFavourite(bool: sender.isSelected)
+        updateFavourite?(sender.isSelected)
+    }
+
 }

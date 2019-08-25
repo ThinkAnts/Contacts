@@ -67,4 +67,14 @@ class ContactDetailViewModel {
         codable = contactDetails
         jsonData = codable?.encode()
     }
+
+    public func updateFavourite(favourite: Bool) {
+        contactDetails?.isFavourite = favourite
+        codable = contactDetails
+        jsonData = codable?.encode()
+        let contactId: String? = String(contactDetails?.contactId ?? 0)
+        if let contactIdValue = contactId {
+            updateContactDetails(contactId: contactIdValue, completion: nil)
+        }
+    }
 }
